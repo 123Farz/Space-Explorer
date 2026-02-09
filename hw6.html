@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Try Catch Example</title>
+</head>
+<body>
+
+<h2>Enter a number</h2>
+
+<input id="num">
+<button onclick="check()">Check</button>
+
+<p id="result"></p>
+
+<script>
+
+function check() {
+
+    try {
+        let x = document.getElementById("num").value;
+
+        x = Number(x);
+
+        if(isNaN(x))
+            throw "That is not a number";
+
+        if(x < 0)
+            throw "Number cannot be negative";
+
+        document.getElementById("result").innerHTML = "Valid number";
+
+    }
+    catch(err) {
+        document.getElementById("result").innerHTML = "Error: " + err;
+    }
+
+}
+
+</script>
+
+</body>
+</html>
